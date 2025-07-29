@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Disease Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Crop Disease Prediction</h1>
+            <p>Identify plant diseases instantly with our AI-powered tool</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="options-container">
+            <div class="option-card" id="camera-option">
+                <div class="option-icon">
+                    <img src="camera-icon.svg" alt="Camera icon">
+                </div>
+                <h2>Take a Photo</h2>
+                <p>Use your device camera to capture a photo of the crop</p>
+                <button id="open-camera-btn" class="primary-btn">Open Camera</button>
+            </div>
+
+            <div class="option-card" id="upload-option">
+                <div class="option-icon">
+                    <img src="upload-icon.svg" alt="Upload icon">
+                </div>
+                <h2>Upload a Photo</h2>
+                <p>Select an existing image from your device</p>
+                <label for="file-input" class="primary-btn">Choose File</label>
+                <input type="file" id="file-input" accept="image/*" hidden>
+            </div>
+        </div>
+
+        <div class="camera-container" id="camera-container" hidden>
+            <div class="camera-wrapper">
+                <video id="camera-view" autoplay playsinline></video>
+                <button id="capture-btn" class="primary-btn">Capture</button>
+                <button id="close-camera-btn" class="secondary-btn">Close Camera</button>
+            </div>
+        </div>
+
+        <div class="preview-container" id="preview-container" hidden>
+            <h2>Image Preview</h2>
+            <div class="image-preview">
+                <img id="preview-image" src="#" alt="Preview of selected crop image">
+            </div>
+            <div class="preview-actions">
+                <button id="analyze-btn" class="primary-btn">Analyze Image</button>
+                <button id="cancel-btn" class="secondary-btn">Cancel</button>
+            </div>
+        </div>
+
+        <div class="results-container" id="results-container" hidden>
+            <h2>Analysis Results</h2>
+            <div class="result-card">
+                <div class="result-image">
+                    <img id="result-image" src="#" alt="Analyzed crop image">
+                </div>
+                <div class="result-details">
+                    <div class="result-item">
+                        <h3>Diagnosis:</h3>
+                        <p id="diagnosis">Healthy</p>
+                    </div>
+                    <div class="result-item">
+                        <h3>Confidence:</h3>
+                        <div class="confidence-bar">
+                            <div id="confidence-level" style="width: 85%;"></div>
+                        </div>
+                        <p id="confidence-percentage">85%</p>
+                    </div>
+                    <div class="result-item">
+                        <h3>Recommendations:</h3>
+                        <ul id="recommendations">
+                            <li>Your crop appears to be healthy</li>
+                            <li>Continue with regular maintenance</li>
+                            <li>Monitor for any changes in appearance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button id="new-analysis-btn" class="primary-btn">New Analysis</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Crop Disease Prediction Tool | For educational purposes only</p>
+            <p class="disclaimer">This is a demonstration. In a real application, predictions would be made by a trained
+                machine learning model.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
